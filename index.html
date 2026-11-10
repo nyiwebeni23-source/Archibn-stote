@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ARCHIBN STORE – Design. Build. Innovate.</title>
+<meta name="description" content="Ressources numériques pour l'architecture et la construction : plans, blocs AutoCAD, guides. Kinshasa, RDC. / Digital resources for architecture and construction.">
+<style>
+:root{--bg:#000;--card:#111;--gold:#d4af37;--gold2:#f1d878;--tx:#fff;--mut:#a0a0a0;--ln:#2b2b2b;--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.65 var(--sans)}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2}
+header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--ln);display:flex;align-items:center;justify-content:space-between;padding:10px 5%}
+.logo{display:flex;align-items:center;gap:10px;font:700 19px var(--serif);letter-spacing:.12em;color:var(--gold)}
+nav{display:flex;gap:20px;align-items:center}
+nav a,nav button{color:var(--mut);font-size:15px;background:none;border:0;cursor:pointer}
+nav a:hover,nav a.on,nav button:hover{color:var(--gold)}
+.cartb{background:var(--gold);color:#000;border-radius:20px;padding:1px 10px;font-weight:700}
+#bg{display:none;background:none;border:1px solid var(--ln);border-radius:6px;padding:4px 10px;font-size:20px;cursor:pointer}
+main{min-height:70vh}
+.w{width:90%;max-width:1150px;margin:0 auto}
+.sec{padding:52px 0}
+.hero{padding:88px 0 76px;border-bottom:1px solid var(--ln);background:linear-gradient(rgba(212,175,55,.09) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(212,175,55,.09) 1px,transparent 1px) 0 0/48px 48px}
+.hero h1{font-size:clamp(38px,8vw,72px);max-width:12ch;color:var(--gold2)}
+.hero p{color:var(--mut);max-width:52ch;margin:18px 0 26px;font-size:18px}
+.btn{display:inline-block;background:var(--gold);color:#000;border:0;border-radius:4px;padding:12px 24px;font-weight:700;cursor:pointer;text-align:center}
+.btn:hover{background:var(--gold2)}
+.btn.o{background:none;color:var(--gold);border:1px solid var(--gold)}
+.btn.o:hover{background:var(--gold);color:#000}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.card:hover{border-color:var(--gold)}
+.th{height:130px;border-radius:4px;display:grid;place-items:center;font-size:48px;background:linear-gradient(135deg,#1c1c1c,#050505);border:1px solid var(--ln)}
+.card small{color:var(--gold)}
+.pl{display:flex;justify-content:space-between;align-items:center}
+.pl b{color:var(--gold2);font-size:18px}
+.pl em{font-style:normal;font-size:13px;border:1px solid var(--gold);color:var(--gold);border-radius:12px;padding:0 10px}
+h2{font-size:clamp(24px,4vw,34px);margin-bottom:20px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+input,textarea,select{background:#0b0b0b;border:1px solid var(--ln);border-radius:4px;padding:10px 12px;width:100%}
+.chip{background:none;border:1px solid var(--ln);border-radius:20px;padding:5px 14px;color:var(--mut);cursor:pointer;font-size:14px}
+.chip.on{border-color:var(--gold);color:var(--gold)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.big{height:300px;font-size:100px}
+.pr{font:600 30px var(--serif);color:var(--gold2);margin:10px 0}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--ln)}
+.tot{font:600 24px var(--serif);text-align:right;margin:18px 0}
+.ft{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.ft div{border-left:2px solid var(--gold);padding-left:14px}
+.mut,.ft p{color:var(--mut)}
+footer{border-top:1px solid var(--ln);padding:34px 5% 90px;color:var(--mut);font-size:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+footer b{color:var(--gold);display:block;margin-bottom:6px}
+footer a{display:block}footer a:hover{color:var(--gold)}
+form{display:grid;gap:12px;max-width:520px}
+.txt p,.txt li{margin-bottom:12px;max-width:70ch;color:#d6d6d6}
+.txt ol{padding-left:20px}
+details{border-bottom:1px solid var(--ln);padding:14px 0;max-width:720px}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--mut);margin-top:8px}
+.note{border:1px solid var(--gold);border-radius:6px;padding:12px 16px;color:var(--gold2);margin:16px 0;max-width:640px}
+.wa{position:fixed;right:16px;bottom:16px;z-index:25;background:var(--gold);color:#000;border-radius:30px;padding:12px 18px;font-weight:700;display:flex;gap:8px;align-items:center;box-shadow:0 4px 18px rgba(0,0,0,.6)}
+#toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:#fff;color:#000;padding:10px 22px;border-radius:24px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .25s;z-index:30}
+#toast.on{opacity:1}
+@media(max-width:760px){
+#bg{display:block}
+nav{display:none;position:absolute;top:100%;left:0;right:0;background:#000;flex-direction:column;align-items:flex-start;padding:16px 5%;gap:14px;border-bottom:1px solid var(--ln)}
+nav.open{display:flex}
+.two{grid-template-columns:1fr}
+.big{height:210px}
+.hero{padding:56px 0}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="#accueil" aria-label="ARCHIBN STORE">
+<svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#d4af37" stroke-width="2" stroke-linejoin="round"><path d="M5 35V15L20 5l15 10v20zM5 15l15 10 15-10M20 25v10"/></svg>
+<span>ARCHIBN STORE</span></a>
+<button id="bg" aria-label="Menu">☰</button>
+<nav id="nav"></nav>
+</header>
+<main id="app"></main>
+<footer id="ft"></footer>
+<a class="wa" id="waf" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="#000"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.200c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.9 2.100c.1.200.1.400 0 .5l-.4.600-.4.400c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.700-.1l2 1c.3.100.5.200.5.300.1.200.1.800-.2 1.400z"/></svg>WhatsApp</a>
+<div id="toast"></div>
+
+<script>
+/* ===== À MODIFIER ===== */
+const CFG={
+  wa:"243965381914", waShow:"+243 965 381 914",
+  // Numéros où les clients envoient l'argent (laisser vide tant que non confirmé)
+  momo:{"Orange Money":"","Airtel Money":"","M-Pesa":""}
+};
+/* Produits : st:"draft" = en préparation (non achetable). Passer à "live" seulement quand le vrai fichier est prêt. */
+const C=[["autocad","AutoCAD","AutoCAD"],["plans","Plans architecturaux","Architectural plans"],["3d","Modèles 3D","3D models"],["dessins","Dessins techniques","Technical drawings"],["fondations","Plans de fondations","Foundation plans"],["ferraillage","Détails de ferraillage","Reinforcement details"],["deco","Décoration intérieure","Interior design"],["guides","Guides techniques","Technical guides"],["templates","Templates professionnels","Professional templates"],["etudiants","Ressources pour étudiants","Student resources"]];
+const P=[
+{id:1,c:"autocad",p:5,st:"draft",i:"📐",f:"DWG, DXF, PDF",n:["Pack de blocs AutoCAD 2D","2D AutoCAD Block Pack"],d:["Collection de blocs architecturaux pour faciliter la réalisation des dessins techniques.","A collection of architectural blocks that makes technical drawing faster."]},
+{id:2,c:"plans",p:10,st:"draft",i:"🏠",f:"PDF, DWG",n:["Plan de maison moderne 3 chambres","Modern 3-Bedroom House Plan"],d:["Projet architectural comprenant les plans, les façades et les coupes d'une maison moderne de trois chambres.","Architectural project with the floor plans, elevations and sections of a modern three-bedroom house."]},
+{id:3,c:"guides",p:7,st:"draft",i:"📘",f:"PDF",n:["Guide pratique du dessin technique en bâtiment","Practical Guide to Technical Drawing in Building"],d:["Guide pédagogique destiné aux étudiants et débutants en architecture et construction.","Teaching guide for architecture and construction students and beginners."]}
+];
+let lang="fr",cart=[];
+try{lang=localStorage.getItem("ab_l")||(/^en/i.test(navigator.language)?"en":"fr");cart=JSON.parse(localStorage.getItem("ab_cart")||"[]")}catch(e){}
+const $=s=>document.querySelector(s);
+const L=(a,b)=>lang=="en"?b:a;
+const wl=m=>"https://wa.me/"+CFG.wa+(m?"?text="+encodeURIComponent(m):"");
+const money=n=>"$"+String(+n.toFixed(2));
+const get=id=>P.find(x=>x.id==id);
+const cn=k=>{const c=C.find(x=>x[0]==k);return c?L(c[1],c[2]):""};
+const total=()=>cart.reduce((s,id)=>s+get(id).p,0);
+function save(){try{localStorage.setItem("ab_cart",JSON.stringify(cart))}catch(e){}const c=$("#cnt");if(c)c.textContent=cart.length}
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),1800)}
+function add(id){const p=get(id);if(!p||p.st!="live")return;if(cart.includes(id))toast(L("Déjà dans le panier","Already in cart"));else{cart.push(id);save();toast(L("Ajouté au panier","Added to cart"))}}
+function del(id){cart=cart.filter(x=>x!=id);save();route()}
+function setLang(l){lang=l;try{localStorage.setItem("ab_l",l)}catch(e){}route()}
+const card=p=>`<a class="card" href="#produit/${p.id}"><div class="th">${p.i}</div><small>${cn(p.c)}</small><h3>${L(...p.n)}</h3><div class="pl"><b>${money(p.p)}</b>${p.st=="draft"?`<em>${L("En préparation","In preparation")}</em>`:""}</div></a>`;
+
+const V={
+accueil(){return `
+<section class="hero"><div class="w"><h1>Design. Build. Innovate.</h1>
+<p>${L("Plans, blocs AutoCAD et guides pour les architectes, étudiants et bâtisseurs. Boutique numérique basée à Kinshasa, ouverte au monde entier.","Plans, AutoCAD blocks and guides for architects, students and builders. A digital store based in Kinshasa, open worldwide.")}</p>
+<a class="btn" href="#boutique">${L("Voir la boutique","Browse the store")}</a> <a class="btn o" target="_blank" rel="noopener" href="${wl()}">WhatsApp ${CFG.waShow}</a></div></section>
+<section class="sec w"><h2>${L("Premiers produits","First products")}</h2><div class="grid">${P.map(card).join("")}</div>
+<p class="mut" style="margin-top:14px">${L("Nos fichiers sont en cours de finalisation. Écrivez-nous sur WhatsApp pour être prévenu dès leur sortie.","Our files are being finalised. Message us on WhatsApp to be told as soon as they are released.")}</p></section>
+<section class="sec w"><h2>${L("Catégories","Categories")}</h2><div class="grid">${C.slice(0,4).map(c=>`<a class="card" href="#boutique/${c[0]}"><h3>${L(c[1],c[2])}</h3></a>`).join("")}</div><br><a class="btn o" href="#categories">${L("Toutes les catégories","All categories")}</a></section>
+<section class="sec w"><div class="ft">
+<div><h3>${L("Fichiers professionnels","Professional files")}</h3><p>${L("Formats standards : DWG, DXF, PDF.","Standard formats: DWG, DXF, PDF.")}</p></div>
+<div><h3>${L("Paiement mobile money","Mobile money payment")}</h3><p>Orange Money, Airtel Money, M-Pesa.</p></div>
+<div><h3>${L("Service client WhatsApp","WhatsApp support")}</h3><p>${CFG.waShow}</p></div>
+</div></section>`},
+categories(){return `<section class="sec w"><h2>${L("Catégories","Categories")}</h2><div class="grid">${C.map(c=>`<a class="card" href="#boutique/${c[0]}"><h3>${L(c[1],c[2])}</h3><small>${P.filter(p=>p.c==c[0]).length} ${L("produit(s)","product(s)")}</small></a>`).join("")}</div></section>`},
+boutique(){return `<section class="sec w"><h2>${L("Boutique","Store")}</h2>
+<div class="bar"><input id="q" type="search" placeholder="${L("Rechercher un produit","Search products")}" aria-label="${L("Rechercher","Search")}"></div>
+<div class="bar" id="cats"></div><div class="grid" id="list"></div></section>`},
+produit(id){const p=get(id);if(!p)return V.err();const live=p.st=="live";
+const nm=L(...p.n);
+return `<section class="sec w"><a class="mut" href="#boutique">← ${L("Boutique","Store")}</a>
+<div class="two" style="margin-top:18px"><div class="th big">${p.i}</div>
+<div><small style="color:var(--gold)">${cn(p.c)}</small><h1 style="font-size:30px">${nm}</h1>
+<div class="pr">${money(p.p)}</div><p class="mut">${L(...p.d)}</p>
+<p class="mut" style="margin-top:10px">${L("Formats","Formats")} : ${p.f}</p>
+${live?"":`<div class="note">${L("Produit en préparation : le fichier n'est pas encore disponible à l'achat.","Product in preparation: the file is not yet available to buy.")}</div>`}
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+${live?`<button class="btn" onclick="add(${p.id})">${L("Ajouter au panier","Add to cart")}</button>`:`<a class="btn" target="_blank" rel="noopener" href="${wl(L("Bonjour ARCHIBN STORE, prévenez-moi quand « "+p.n[0]+" » sera disponible.","Hello ARCHIBN STORE, please tell me when \""+p.n[1]+"\" is available."))}">${L("Être prévenu sur WhatsApp","Get notified on WhatsApp")}</a>`}
+<a class="btn o" target="_blank" rel="noopener" href="${wl(L("Bonjour, j'ai une question sur « "+p.n[0]+" ».","Hello, I have a question about \""+p.n[1]+"\"."))}">${L("Poser une question","Ask a question")}</a></div></div></div></section>`},
+panier(){if(!cart.length)return `<section class="sec w"><h2>${L("Panier","Cart")}</h2><p class="mut">${L("Votre panier est vide. Les premiers produits sont en préparation.","Your cart is empty. The first products are in preparation.")}</p><br><a class="btn" href="#boutique">${L("Voir la boutique","Browse the store")}</a></section>`;
+return `<section class="sec w"><h2>${L("Panier","Cart")}</h2>${cart.map(id=>{const p=get(id);return `<div class="row"><span>${p.i} ${L(...p.n)}</span><span><b>${money(p.p)}</b> &nbsp; <button class="chip" onclick="del(${id})">${L("Retirer","Remove")}</button></span></div>`}).join("")}
+<div class="tot">Total : ${money(total())}</div><div style="text-align:right"><a class="btn" href="#paiement">${L("Passer au paiement","Go to payment")}</a></div></section>`},
+paiement(){if(!cart.length)return V.panier();
+const ops=Object.keys(CFG.momo);
+return `<section class="sec w txt"><h2>${L("Paiement","Payment")}</h2>
+<p>${L("Total à payer","Total to pay")} : <b style="color:var(--gold2)">${money(total())}</b></p>
+<ol><li>${L("Choisissez votre opérateur mobile money ci-dessous.","Choose your mobile money operator below.")}</li>
+<li>${L("Envoyez le montant au numéro indiqué (ou demandé sur WhatsApp).","Send the amount to the number shown (or ask on WhatsApp).")}</li>
+<li>${L("Envoyez votre commande et la référence de transaction sur WhatsApp.","Send your order and the transaction reference on WhatsApp.")}</li>
+<li>${L("Après vérification du paiement, vous recevez vos fichiers sur WhatsApp.","After we verify the payment, you receive your files on WhatsApp.")}</li></ol>
+<div class="note">${L("Le paiement et la livraison sont vérifiés manuellement par l'équipe. Aucun paiement n'est traité automatiquement sur ce site.","Payment and delivery are checked manually by our team. No payment is processed automatically on this site.")}</div>
+<form onsubmit="return false">
+<input id="nm" placeholder="${L("Votre nom","Your name")}" autocomplete="name">
+<select id="op">${ops.map(o=>`<option>${o}${CFG.momo[o]?" – "+CFG.momo[o]:""}</option>`).join("")}</select>
+<input id="rf" placeholder="${L("Référence de la transaction (après paiement)","Transaction reference (after payment)")}">
+<button class="btn" onclick="order()">${L("Envoyer ma commande sur WhatsApp","Send my order on WhatsApp")}</button></form></section>`},
+apropos(){return `<section class="sec w txt"><h2>${L("À propos","About")}</h2>
+<p>${L("ARCHIBN STORE est une boutique numérique basée à Kinshasa, en République démocratique du Congo. Slogan : Design. Build. Innovate.","ARCHIBN STORE is a digital store based in Kinshasa, Democratic Republic of the Congo. Our motto: Design. Build. Innovate.")}</p>
+<p>${L("Notre objectif : proposer des ressources professionnelles pour l'architecture, la construction et la décoration : plans, modèles 3D, blocs AutoCAD, dessins techniques et guides.","Our goal: offer professional resources for architecture, construction and decoration: plans, 3D models, AutoCAD blocks, technical drawings and guides.")}</p></section>`},
+contact(){return `<section class="sec w"><h2>Contact</h2>
+<p class="mut" style="margin-bottom:14px">WhatsApp : <b style="color:var(--gold2)">${CFG.waShow}</b> · Kinshasa, RDC</p>
+<form onsubmit="return false"><input id="cn" placeholder="${L("Votre nom","Your name")}">
+<textarea id="cm" rows="5" placeholder="${L("Votre message","Your message")}"></textarea>
+<button class="btn" onclick="contactWa()">${L("Envoyer sur WhatsApp","Send on WhatsApp")}</button></form></section>`},
+faq(){const q=[[ "Comment acheter ?","How do I buy?","Choisissez un produit disponible, payez par mobile money, puis envoyez votre commande sur WhatsApp.","Pick an available product, pay by mobile money, then send your order on WhatsApp."],
+["Comment recevoir mes fichiers ?","How do I get my files?","Après vérification de votre paiement, nous vous envoyons les fichiers sur WhatsApp.","After we verify your payment, we send the files to you on WhatsApp."],
+["Quels moyens de paiement ?","Which payment methods?","Orange Money, Airtel Money et M-Pesa. D'autres moyens seront ajoutés plus tard.","Orange Money, Airtel Money and M-Pesa. More methods will be added later."],
+["Quels formats de fichiers ?","Which file formats?","DWG, DXF et PDF selon le produit. Le format est indiqué sur chaque fiche.","DWG, DXF and PDF depending on the product. The format is shown on each product page."],
+["Un fichier ne s'ouvre pas ?","A file will not open?","Écrivez-nous sur WhatsApp avec une capture d'écran : nous vous aidons.","Message us on WhatsApp with a screenshot and we will help."]];
+return `<section class="sec w"><h2>FAQ</h2>${q.map(x=>`<details><summary>${L(x[0],x[1])}</summary><p>${L(x[2],x[3])}</p></details>`).join("")}</section>`},
+cgv(){return `<section class="sec w txt"><h2>${L("Conditions générales de vente","Terms of sale")}</h2>
+<p>${L("Les produits sont des fichiers numériques livrés après vérification du paiement.","Products are digital files delivered after payment is verified.")}</p>
+<p>${L("Les fichiers numériques livrés ne sont pas remboursables, sauf fichier défectueux signalé sous 7 jours.","Delivered digital files are not refundable, except for a defective file reported within 7 days.")}</p>
+<p>${L("L'achat donne un droit d'usage personnel ou professionnel. La revente ou le partage des fichiers est interdit.","A purchase gives a personal or professional licence of use. Reselling or sharing the files is forbidden.")}</p>
+<p class="mut">${L("Texte de départ à faire relire avant les premières ventes.","Starter text, to be reviewed before the first sales.")}</p></section>`},
+confidentialite(){return `<section class="sec w txt"><h2>${L("Politique de confidentialité","Privacy policy")}</h2>
+<p>${L("Ce site ne collecte aucune donnée sur un serveur. Le panier et la langue sont enregistrés uniquement sur votre appareil.","This site collects no data on a server. Your cart and language are stored only on your device.")}</p>
+<p>${L("Les informations que vous envoyez par WhatsApp (nom, commande, référence de paiement) servent uniquement à traiter votre commande.","The information you send on WhatsApp (name, order, payment reference) is used only to process your order.")}</p></section>`},
+err(){return `<section class="sec w"><h2>${L("Page introuvable","Page not found")}</h2><a class="btn" href="#accueil">${L("Accueil","Home")}</a></section>`}
+};
+
+function order(){
+  const nm=$("#nm").value.trim();
+  if(!nm){toast(L("Entrez votre nom","Enter your name"));return}
+  const lines=cart.map(id=>"- "+L(...get(id).n)+" ("+money(get(id).p)+")").join("\n");
+  const m=L("Bonjour ARCHIBN STORE, je souhaite commander :\n","Hello ARCHIBN STORE, I would like to order:\n")+lines+"\nTotal : "+money(total())+"\n"+L("Nom","Name")+" : "+nm+"\n"+L("Paiement","Payment")+" : "+$("#op").value+"\n"+L("Référence","Reference")+" : "+($("#rf").value.trim()||"-");
+  window.open(wl(m),"_blank");
+}
+function contactWa(){
+  const m=$("#cm").value.trim();
+  if(!m){toast(L("Écrivez un message","Write a message"));return}
+  window.open(wl(m+($("#cn").value?"\n— "+$("#cn").value:"")),"_blank");
+}
+function shop(cat){
+  const keys=["all",...C.map(c=>c[0])];
+  const draw=()=>{
+    const q=$("#q").value.toLowerCase();
+    const r=P.filter(p=>(cat=="all"||p.c==cat)&&(p.n.join(" ")+p.d.join(" ")).toLowerCase().includes(q));
+    $("#list").innerHTML=r.length?r.map(card).join(""):`<p class="mut">${L("Aucun produit dans cette catégorie pour le moment.","No product in this category yet.")}</p>`;
+    $("#cats").innerHTML=keys.map(k=>`<button class="chip ${k==cat?"on":""}" data-c="${k}">${k=="all"?L("Tous","All"):cn(k)}</button>`).join("");
+  };
+  $("#q").oninput=draw;
+  $("#cats").onclick=e=>{if(e.target.dataset.c){cat=e.target.dataset.c;draw()}};
+  draw();
+}
+function chrome(pg){
+  const n=[["accueil",L("Accueil","Home")],["boutique",L("Boutique","Store")],["categories",L("Catégories","Categories")],["apropos",L("À propos","About")],["contact","Contact"],["faq","FAQ"]];
+  $("#nav").innerHTML=n.map(x=>`<a href="#${x[0]}" class="${x[0]==pg?"on":""}">${x[1]}</a>`).join("")+`<a href="#panier" class="${pg=="panier"?"on":""}">${L("Panier","Cart")} <span class="cartb" id="cnt">${cart.length}</span></a><button onclick="setLang('${L("en","fr")}')">${L("EN","FR")}</button>`;
+  $("#ft").innerHTML=`<div><b>ARCHIBN STORE</b>Design. Build. Innovate.<br>Kinshasa, RDC<br>WhatsApp ${CFG.waShow}</div>
+<div><b>${L("Catégories","Categories")}</b><a href="#boutique/plans">${cn("plans")}</a><a href="#boutique/3d">${cn("3d")}</a><a href="#boutique/autocad">AutoCAD</a><a href="#boutique/guides">${cn("guides")}</a></div>
+<div><b>${L("Informations","Information")}</b><a href="#paiement">${L("Paiement","Payment")}</a><a href="#cgv">${L("Conditions générales","Terms")}</a><a href="#confidentialite">${L("Confidentialité","Privacy")}</a><a href="#faq">FAQ</a></div>`;
+  $("#waf").href=wl(L("Bonjour ARCHIBN STORE, j'ai besoin d'aide.","Hello ARCHIBN STORE, I need help."));
+  document.documentElement.lang=lang;
+}
+function route(){
+  const [pg,arg]=(location.hash.slice(1)||"accueil").split("/");
+  chrome(pg);
+  $("#app").innerHTML=(V[pg]||V.err)(arg);
+  if(pg=="boutique")shop(arg&&C.some(c=>c[0]==arg)?arg:"all");
+  $("#nav").classList.remove("open");
+  window.scrollTo(0,0);
+  document.title="ARCHIBN STORE – Design. Build. Innovate.";
+}
+$("#bg").onclick=()=>$("#nav").classList.toggle("open");
+addEventListener("hashchange",route);
+route();
+</script>
+</body>
+</html>
